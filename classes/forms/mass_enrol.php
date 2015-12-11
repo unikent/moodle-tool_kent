@@ -61,7 +61,8 @@ class mass_enrol extends \moodleform
         $mform->addRule('courses', null, 'required', null, 'client');
 
         // Add role select box.
-        $mform->addElement('select', 'roleid', 'Role', $DB->get_records_menu('role', array(), '', 'id,shortname'));
+        list($sql, $params) = $DB->get_in_or_equal(array('student', 'teacher', 'convenor'), SQL_PARAMS_NAMED, 'shortname');
+        $mform->addElement('select', 'roleid', 'Role', $DB->get_records_select_menu('role', 'shortname ' . $sql, $params, '', 'id,shortname'));
         $mform->addRule('roleid', null, 'required', null, 'client');
 
         $this->add_action_buttons(true, 'Enrol');
