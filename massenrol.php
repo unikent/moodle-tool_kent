@@ -65,7 +65,7 @@ if ($data = $form->get_data()) {
 echo $OUTPUT->header();
 echo $OUTPUT->heading("Mass-Enrol tool");
 
-echo \html_writer::tag("p", "This tool will mass-enrol students on courses. Be warned... It should NEVER be used! Use SDS! >:(");
+echo \html_writer::tag("p", "This tool will mass-enrol users on courses, in a specified role.");
 
 $form->display();
 
