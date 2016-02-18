@@ -24,6 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+debugging('tool_kent is deprecated');
+
 $plugin->component = 'tool_kent';
 $plugin->version   = 2015070900;
 $plugin->requires  = 2014051200;
